@@ -23,5 +23,25 @@ def login():
 def home():
     return render_template("home.html")
 
+# # Upload route
+# @app.route("/upload", methods=["GET", "POST"])
+# def upload():
+#     if request.method == "POST":
+#         file = request.files["file"]
+#         if file:
+#             # Here you would handle the file upload
+#             return redirect(url_for("home"))
+#     return render_template("upload.html")
+
+# Register route
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        # Here you would handle user registration logic
+        return redirect(url_for("login"))
+    return render_template("register.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

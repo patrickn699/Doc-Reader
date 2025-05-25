@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - File Uploader</title>
+  <title>Register - File Uploader</title>
   <link rel="stylesheet" href="../static/login.css">
   <link rel="icon" href="../static/file.png" type="image/x-icon">
 </head>
 <body>
   <div class="login-container">
     <div class="login-box">
-      <h1>Login</h1>
-      <form id="loginForm">
+      <h1>Register</h1>
+      <form id="registerForm">
         <div class="input-group">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" placeholder="Enter your username" required>
         </div>
         <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="Enter your password" required>
         </div>
-        <button type="submit" class="login-button">Login</button>
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="login-button">Register</button>
       </form>
-      <p class="redirect-link">Don't have an account? <a href="/register">Register here</a></p>
+      <p class="redirect-link">Already have an account? <a href="/login">Login here</a></p>
     </div>
   </div>
 </body>
