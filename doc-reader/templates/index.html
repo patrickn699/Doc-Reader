@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="icon" href="../static/file.png" type="image/x-icon">
+</head>
+<body>
+  <!-- Top Navigation Menu -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">FileUploader</a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- File Upload Section -->
+  <div class="file-upload">
+    <div class="upload-area" id="uploadArea">
+      <p>Drag & Drop files here or <span class="browse-button" id="browseButton">Browse</span></p>
+      <input type="file" id="fileInput" accept=".pdf" multiple hidden>
+      <div class="loading-spinner" id="loadingSpinner" hidden></div>
+    </div>
+
+    <div class="file-list" id="fileList">
+      <!-- File items will be dynamically added here -->
+    </div>
+  </div>
+
+  <script src="../static/script.js"></script>
+</body>
+</html>
