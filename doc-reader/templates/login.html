@@ -11,7 +11,13 @@
   <div class="login-container">
     <div class="login-box">
       <h1>Login</h1>
-      <form id="loginForm">
+      <!-- Display error message if it exists -->
+      {% if error %}
+      <div class="error-message" style="color: red; margin-bottom: 10px;">
+        {{ error }}
+      </div>
+      {% endif %}
+      <form id="loginForm" action="/login" method="POST">
         <div class="input-group">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" placeholder="Enter your username" required>
