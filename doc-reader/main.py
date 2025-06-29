@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from psycopg2 import sql
 import requests
 
@@ -68,7 +68,7 @@ def register_user(username, email, password):
         return {"error": str(e)}
 
         
-
+# pass is test
 # Register route
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -76,15 +76,20 @@ def register():
         username = request.form["username"]
         email = request.form["email"]
         password = request.form["password"]
-        confirm_password = request.form["confirm_password"]
+        confirm_password = request.form["confirmPassword"]
 
         # Here you would handle user registration logic
         if password != confirm_password:
             return "Passwords do not match", 400
-        elif register_user(username, email, password):
-            return redirect(url_for("login"))
+        else:
+            result = register_user(username, email, password)
+            print(result, flush=True)
+            if "error" in result:
+                return render_template("register.html", error=result["error"])
+            #flash(result)
+            return redirect(url_for("register"))
 
-        return redirect(url_for("login"))
+        #return redirect(url_for("login"))
     return render_template("register.html")
 
 # File upload route
